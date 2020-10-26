@@ -27,5 +27,7 @@ func (h *Handler) Index(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
-	w.Write(b)
+	if _, err := w.Write(b); err != nil {
+		panic(err)
+	}
 }
