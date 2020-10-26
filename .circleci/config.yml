@@ -9,8 +9,6 @@ jobs:
       - image: circleci/golang:1.15.3
     working_directory: /go/src/github.com/apriendeau/basic-go-api
     steps:
-      - cache-fetch:
-          key: source
       - checkout
 
       # specify any bash command here prefixed with `run: `
